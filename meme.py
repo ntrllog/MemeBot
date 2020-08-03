@@ -53,10 +53,10 @@ def addTextToImage(im, t1='', t2='', t1Color='black', t2Color='black'):
     fontsize = int(imHeight * .05)
 
     draw = ImageDraw.Draw(im)
-    font = ImageFont.truetype('arial.ttf', fontsize)
+    font = ImageFont.truetype(os.path.join('fonts', 'arial.ttf'), fontsize)
     
-    t1Lines = text_wrap.text_wrap(t1, font, int(imWidth * .9))
-    t2Lines = text_wrap.text_wrap(t2, font, int(imWidth * .9))
+    t1Lines = text_wrap(t1, font, int(imWidth * .9))
+    t2Lines = text_wrap(t2, font, int(imWidth * .9))
 
     text_height = 0
     for line in t1Lines:
